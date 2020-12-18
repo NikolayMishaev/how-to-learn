@@ -1,3 +1,6 @@
+/* Написал комментарии к некоторым решениям в коде, где я использую какие свойства и почему, чтобы показать
+свое мышление, и как я это усвоил, понимаю что они в коде не нужны, но в целях обучения, мне кажется так лучше */
+
 .page {
   min-width: 1100px;
   /* мы ещё не умеем делать мобильную версию сайта, */
@@ -19,25 +22,28 @@
   align-items: center;
   background-color: #f2f2f2;
   overflow: hidden;
+  /* использовал данное свойство для того, чтобы элемент header__square-pic
+  не вылезал из-под блока header при сужении окна по высоте до минимально установленного значения 600px,
+  т.к. мы используем свойство overflow в блоке kaufman, то решил использовать его здесь */
 }
 
 .logo {
-
-}
-
-.logo__img {
   width: 183px;
   height: 32px;
 }
 
 .logo_place_header {
+  background-image: url(../images/logo_place_header.svg);
+  /* Сначала в разметке я использовал тег img для картинки, но потом увидел, что картинки для header и footer
+  используются разные, получается блок задает размеры, а модификатор позиционирование и фон картинки*/
   z-index: 2;
-position: absolute;
-left: 64px;
-top: 30px;
+  position: absolute;
+  left: 64px;
+  top: 30px;
 }
 
 .header__title {
+  margin: 0;
   z-index: 2;
   width: 730px;
   margin-left: 64px;
@@ -47,6 +53,7 @@ top: 30px;
 }
 
 .header__subtitle {
+  margin: 0;
   position: absolute;
   left: 64px;
   bottom: 30px;
@@ -67,11 +74,11 @@ top: 30px;
   right: 0;
   bottom: 0;
   z-index: 1;
-width: 765px;
-height: 608px;
-background-image: url(../images/header-image.png);
-background-repeat: no-repeat;
-background-size: cover;
+  width: 765px;
+  height: 608px;
+  background-image: url(../images/header-image.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* ниже мы привели пример двух селекторов, чтобы вы вспомнили запись элемента */
@@ -86,6 +93,9 @@ background-size: cover;
 
 .description {
   padding-top: 100px;
+  /* на вебинаре по верстке сказали, что в брифе возможно надо использовать margin для отступов блока, но в брифе
+  просто указан размер в px, поэтому использовал внутренний отступ, т.к. я понял, что по бэм, блок не должен
+  своими свойствами влиять на другие внешние блоки или элементы */
   display: flex;
   justify-content: center;
 }
@@ -97,41 +107,233 @@ background-size: cover;
 }
 
 .two-columns__brief {
-width: 175px;
-line-height: 1.2;
-font-size: 18px;
-font-weight: normal;
-color: #2f80ed;
+  margin: 0;
+  width: 175px;
+  line-height: 1.2;
+  font-size: 18px;
+  font-weight: normal;
+  color: #2f80ed;
 }
 
 .two-columns__main-text {
   width: 80%;
 min-width: 784px;
+line-height: 34px;
+font-size: 24px;
+font-weight: normal;
+/* Вынес свойства шрифта в этот элемент, кажется так код короче, иначе эти свойства дважды повторяются в элементах
+.two-columns__paragraph и .two-columns__span-accent */
 }
 
-
-.two-columns__main-text {
-  line-height: 34px;
-  font-size: 24px;
-  font-weight: normal;
-}
-
-.two-columns__paragraph:first-of-type {
+.two-columns__paragraph:first-child {
   margin: 0;
 }
 
 .two-columns__paragraph {
-  margin: 30px 0 0 0;
+  margin: 30px 0;
+  /* проверил через инспектор, что стили по умолчанию задаются только для верхнего и нижнего полей, поэтому для
+  правого и левого полей margin не сбрасываю */
 }
 
 .two-columns__span-accent {
   font-weight: bold;
 }
 
+.digits {
+  padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-title {
+  margin: 0;
+  padding-bottom: 20px;
+  width: 60%;
+  text-align: center;
+  line-height: 1.15;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.section-subtitle {
+  margin: 0;
+  width: 60%;
+  text-align: center;
+  line-height: 34px;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.table {
+  width: 1100px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.table__cell {
+  width: 250px;
+  padding-top: 60px;
+}
+
+.table__heading {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.table__text {
+  margin: 0;
+  padding-top: 20px;
+  line-height: 1.2;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.feynman {
+  height: 790px;
+  padding-top: 100px;
+  background: url(../images/feynman.png) no-repeat;
+  background-position: left bottom;
+  background-size: 867px 637px;
+  position: relative;
+  background-color: #f2f2f2;
+}
+
+.feynman__title {
+  width: 648px;
+  margin: 0 auto 70px;
+  /* здесь использовал маржин, т.к. это элемент, а не блок */
+  text-align: center;
+  line-height: 1.15;
+  font-size: 120px;
+  font-weight: bold;
+}
+
+.feynman__subtitle {
+  margin: 0 auto;
+  text-align: center;
+  line-height: 51px;
+  font-size: 36px;
+  font-weight: normal;
+}
+
+.feynman__link {
+  position: absolute;
+  top: 50%;
+  right: 48px;
+  line-height: 51px;
+  font-size: 36px;
+  font-weight: normal;
+  color: #2f80ed;
+  text-decoration: none;
+}
+
+.kaufman {
+  padding: 90px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1f1f1f;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-title_theme_dark {
+  color: white;
+  z-index: 1;
+}
+
+.section-subtitle_theme_dark {
+  color: white;
+  z-index: 1;
+}
+
+.table_theme_dark {
+  z-index: 1;
+}
+
 /* и элемента с модификатором вида ключ-значение */
 .table__cell_theme_dark {
   width: 200px;
   color: white;
-  margin-right: 0;
-  margin-top: 80px;
+  /* margin-right: 0; */
+  /* не понял, зачем здесь это свойство, марджин не наследуется ни от куда судя по инспектору*/
+  padding-top: 80px;
+}
+
+.kaufman__triangle {
+  width: 877px;
+  height: 877px;
+  background: url(../images/kaufman-triangle.svg) no-repeat;
+  background-size: contain;
+  position: absolute;
+  right: -210px;
+  top: 0;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 60px 0 40px;
+  min-height: 350px;
+  color: white;
+  background-color: #1f1f1f;
+}
+
+.footer__columns {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__column_content_copyright {
+  flex-basis: 711px;
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+}
+
+.footer__column-heading {
+  margin: 0;
+  line-height: 30px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.footer__columns-links {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0 16px;
+}
+
+.footer__column-link {
+  text-decoration: none;
+  color: white;
+  margin: 0;
+  line-height: 30px;
+  font-size: 18px;
+  font-weight: normal;
+
+}
+
+.footer__social-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+}
+
+.logo_place_footer {
+  background-image: url(../images/logo_place_footer.svg);
+  height: 35px;
+}
+
+.footer__author {
+  margin-top: auto;
+  padding: 19px 0 19px;
+  line-height: 25px;
+  font-size: 18px;
+  font-weight: normal;
 }
