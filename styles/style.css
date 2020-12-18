@@ -69,6 +69,10 @@
   text-decoration: none;
 }
 
+.header__link:hover {
+  opacity: .7;
+}
+
 .header__main-illustration {
   position: absolute;
   right: 0;
@@ -236,6 +240,9 @@ font-weight: normal;
   color: #2f80ed;
   text-decoration: none;
 }
+.feynman__link:hover {
+  opacity: .7;
+}
 
 .kaufman {
   padding: 90px 0;
@@ -343,7 +350,10 @@ font-weight: normal;
   line-height: 30px;
   font-size: 18px;
   font-weight: normal;
+}
 
+.footer__column-link:hover {
+  opacity: .7;
 }
 
 .footer__social-icon {
