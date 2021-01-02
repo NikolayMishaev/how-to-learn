@@ -1,0 +1,12 @@
+.resources__logo-link {
+  display: inline-block;
+  height: inherit;
+}
+
+.resources__logo-link:hover {
+  opacity: .7;
+}
+
+.resources__logo-link:last-child:hover {
+  opacity: .5;
+}
