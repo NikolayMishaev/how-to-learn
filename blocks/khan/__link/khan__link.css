@@ -6,6 +6,7 @@
   color: #2f80ed;
   margin-left: 48px;
   align-self: flex-start;
+  transition: opacity .5s;
 }
 
 .khan__link:hover {
