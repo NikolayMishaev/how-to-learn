@@ -1,6 +1,6 @@
 # Научиться учиться
 ***
-[ссылка на страницу](https://nikolaymishaev.github.io/how-to-learn/)
+[ссылка на страницу](https://nikolaymishaev.github.io/how-to-learn/index.html)
 ## Описание
 - На странице описаны главные проблемы в обучении
 - Приведены статистические данные
